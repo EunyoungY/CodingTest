@@ -1,0 +1,16 @@
+N = int(input())
+arr = list(map(int, input().split()))
+
+i = 0
+j = N-2
+k = N-1
+count = 0
+arr.sort()
+
+while i < j:
+    if arr[i]+arr[j] == arr[k]:
+        count += 1
+    j -= 1
+    k -= 1
+    print(i, j, k)
+print(count)
