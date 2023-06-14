@@ -44,11 +44,11 @@ q = deque()
 
 def bfs(a, b):
     # depth = 0
-    q.append([a, b])
-    arr[a][b] = 0  # MISS
-    depth = 1  # Mistake: depth = 0
+    q.append([a, b]) 
+    arr[a][b] = 0 # MISS
+    depth = 1 # Mistake: depth = 0
     while q:
-        x, y = q.popleft()  # 쉽게 빼는 팁
+        x,y = q.popleft()  #쉽게 빼는 팁
         # curr = q.popleft()
         # x = curr[0]
         # y = curr[1]
@@ -62,7 +62,6 @@ def bfs(a, b):
                     arr[nx][ny] = 0
                     depth += 1
     answer.append(depth)
-
 
 print(arr)
 
