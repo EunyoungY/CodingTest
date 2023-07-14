@@ -1,7 +1,11 @@
-# 1=>1
-# 2=>2
-# 3=>2  111 12
-# 4=>3   1111 121 22  
-# 5 =>4  11111 2111 221  5
-# 6=> 5   111111 21111 2211 222  51
-# 7=>6      1111111 211111 22111 2221 52 511
+n, k = map(int, input().split())
+coins = []
+for _ in range(n):
+    coins.append(int(input()))
+
+dp = [1]+[0]*(k)
+for coin in coins:
+    for sumVal in range(coin,k+1):
+        dp[sumVal] += dp[sumVal-coin]
+# print(dp)
+print(dp[k])
