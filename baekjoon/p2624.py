@@ -13,6 +13,7 @@ for coin, cnt in coins:
         for i in range(1, cnt+1): # 현재 동전 coin의 개수만큼 for문 진행 
             if money - coin * i >= 0: # 0원 이상인 경우
                 dp[money] += dp[money - coin * i]
+                print('conin:', coin,'money:',money,'i:', i, dp)
 print(dp)
 print(dp[T])
 '''
