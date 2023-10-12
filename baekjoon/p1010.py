@@ -1,15 +1,15 @@
 t = int(input())
-arr=[]
-max_val = 0
-for _ in range(t):
-    n,m = map(int,input().split())
-    arr.append([n,m])
-    max_val = max(max_val, m)
+dp = [[0]*30 for _ in range(30)]
 
-dp=[1,1]
-for i in range(2, max_val+1):
-    num = dp[i-1]*i
-    dp.append(num) 
-for n, m in arr:
-    print((dp[m]//dp[n])//dp[m-n])
- 
+for i in range(30):
+    dp[i][0] = 1
+    dp[i][i] = 1
+
+for i in range(2, 30):
+    for j in range(1, i):
+        dp[i][j] = dp[i-1][j-1]+dp[i-1][j]
+
+
+for i in range(t):
+    r, n = map(int, input().split())
+    print(dp[n][r])

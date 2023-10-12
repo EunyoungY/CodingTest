@@ -11,3 +11,11 @@ for i in range(1, n+1):
             
 # print(*knapsack)
 print(knapsack[n][k])
+
+'''
+4 7
+6 13
+4 8
+3 6
+5 12
+'''
